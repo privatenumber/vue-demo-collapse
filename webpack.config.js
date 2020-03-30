@@ -8,13 +8,14 @@ module.exports = {
 	context: path.resolve('src'),
 
 	entry: {
-		ComponentDemo: './index.js',
+		DemoCollapse: './index.js',
 	},
 
 	output: {
 		path: path.resolve('dist'),
 		filename: '[name].js',
-		libraryTarget: 'commonjs2',
+		library: 'DemoCollapse',
+		libraryTarget: 'umd',
 	},
 
 	module: {
