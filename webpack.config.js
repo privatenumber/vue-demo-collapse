@@ -1,9 +1,12 @@
 const path = require('path');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 module.exports = {
+	mode: 'production',
 
 	context: path.resolve('src'),
 
@@ -16,6 +19,13 @@ module.exports = {
 		filename: '[name].js',
 		library: 'DemoCollapse',
 		libraryTarget: 'umd',
+	},
+
+	optimization: {
+		minimizer: [
+			new TerserPlugin(),
+			new OptimizeCssAssetsPlugin(),
+		],
 	},
 
 	module: {
@@ -35,30 +45,28 @@ module.exports = {
 			},
 			{
 				test: /\.css$/,
-				loader: ExtractTextPlugin.extract({
-					use: [
-						{
-							loader: 'css-loader',
-							options: {
-								importLoaders: 2,
-								modules: true,
+				use: [
+					MiniCssExtractPlugin.loader,
+					{
+						loader: 'css-loader',
+						options: {
+							importLoaders: 2,
+							modules: {
 								localIdentName: '[hash:base64:5]',
 							},
 						},
-						{
-							loader: 'clean-css-loader',
-						},
-						'postcss-loader',
-					],
-					fallback: 'vue-style-loader',
-				}),
+					},
+					'postcss-loader',
+				],
 			},
 		],
 	},
 
 	plugins: [
+		new CleanWebpackPlugin(),
 		new VueLoaderPlugin(),
-		new ExtractTextPlugin('styles.css'),
-		new UglifyJsPlugin(),
+		new MiniCssExtractPlugin({
+			filename: 'style.css',
+		}),
 	],
 };
