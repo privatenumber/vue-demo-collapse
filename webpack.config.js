@@ -28,6 +28,8 @@ module.exports = {
 		],
 	},
 
+	externals: ['prism'],
+
 	module: {
 		rules: [
 			{
