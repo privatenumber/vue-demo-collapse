@@ -5,8 +5,10 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
+const isProd = process.env.NODE_ENV === 'production';
+
 module.exports = {
-	mode: 'production',
+	mode: isProd ? 'production' : 'development',
 
 	context: path.resolve('src'),
 

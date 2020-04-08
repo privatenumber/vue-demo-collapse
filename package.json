@@ -15,6 +15,7 @@
   "homepage": "https://github.com/privatenumber/vue-demo-collapse#readme",
   "scripts": {
     "np": "np",
+    "dev": "webpack --watch",
     "build": "NODE_ENV=production webpack",
     "lint:js": "eslint --ext vue,js .",
     "lint:css": "stylelint 'src/**/*.{css,vue}'"
