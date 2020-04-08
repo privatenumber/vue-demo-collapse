@@ -10,7 +10,7 @@
     "collapse"
   ],
   "files": ["dist"],
-  "main": "dist/ComponentDemo.js",
+  "main": "dist/demo-collapse.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/privatenumber/vue-demo-collapse.git"
