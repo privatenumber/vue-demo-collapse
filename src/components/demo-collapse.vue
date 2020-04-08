@@ -33,7 +33,7 @@ export default {
 
 	components: {
 		Subslot,
-		CollapseTransition
+		CollapseTransition,
 	},
 
 	mixins: [
