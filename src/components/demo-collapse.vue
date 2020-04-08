@@ -4,12 +4,14 @@
 			<subslot />
 		</div>
 		<template v-if="$subslots.files">
-			<div
-				v-if="!collapsed"
-				:class="$s.Files"
-			>
-				<subslot name="files" />
-			</div>
+			<collapse-transition>
+				<div
+					v-show="!collapsed"
+					:class="$s.Files"
+				>
+					<subslot name="files" />
+				</div>
+			</collapse-transition>
 			<button
 				type="button"
 				:class="$s.ToggleCode"
@@ -24,12 +26,14 @@
 <script>
 import Subslot from 'vue-subslot';
 import SrcFile from './src-file.vue';
+import CollapseTransition from './collapse-transition.vue';
 
 export default {
 	name: 'ComponentDemo',
 
 	components: {
 		Subslot,
+		CollapseTransition
 	},
 
 	mixins: [
@@ -77,6 +81,7 @@ export default {
 
 .Files {
 	margin-top: 16px;
+	overflow: hidden;
 }
 
 .ToggleCode {

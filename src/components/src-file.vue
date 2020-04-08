@@ -46,12 +46,6 @@ export default {
 			prismjs.highlightElement(this.$refs.code);
 		}
 	},
-
-	// updated() {
-	// 	if (this.language) {
-	// 		prismjs.highlightElement(this.$refs.code);
-	// 	}
-	// },
 };
 </script>
 
@@ -71,11 +65,9 @@ export default {
 
 .Name {
 	font-family: system-ui;
-	font-size: 12px;
+	font-size: 13px;
 	padding: 8px;
 	color: #333;
-	background-color: #eaebef;
-	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .Source {
@@ -90,7 +82,7 @@ export default {
 }
 
 .Code {
-	border-left-width: 4px;
+	border-left: 3px solid #52a5e0 !important;
 	padding: 1em 2em !important;
 	white-space: pre-wrap !important;
 }
