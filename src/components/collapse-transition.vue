@@ -43,7 +43,7 @@ export default {
 
 <style module="$s">
 .transitioning {
-	transition: height .4s ease-in-out;
+	transition: height .25s ease-in-out;
 	overflow: hidden;
 }
 </style>
