@@ -10,7 +10,7 @@
 		</div>
 
 		<pre :class="$s.Source"><code
-			:class="prismClass"
+			:class="[$s.Code, prismClass]"
 			ref="code"
 		><slot /></code></pre>
 	</div>
@@ -83,9 +83,15 @@ export default {
 	margin: 0 !important;
 	padding: 8px;
 	background-color: #fff;
-	font-size: 11px;
+	font-size: 11px !important;
 	color: #444;
 	white-space: pre-wrap;
 	max-width: 100%;
+}
+
+.Code {
+	border-left-width: 4px;
+	padding: 1em 2em !important;
+	white-space: pre-wrap !important;
 }
 </style>
