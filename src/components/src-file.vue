@@ -10,8 +10,8 @@
 		</div>
 
 		<pre :class="$s.Source"><code
-			:class="[$s.Code, prismClass]"
 			ref="code"
+			:class="[$s.Code, prismClass]"
 		><slot /></code></pre>
 	</div>
 </template>
@@ -29,13 +29,14 @@ export default {
 		},
 		language: {
 			type: String,
+			default: undefined,
 		},
 	},
 
 	computed: {
 		prismClass() {
 			if (this.language) {
-				return 'language-' + this.language;
+				return `language-${this.language}`;
 			}
 			return '';
 		},
