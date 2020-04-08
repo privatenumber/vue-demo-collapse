@@ -30,7 +30,7 @@ module.exports = {
 		],
 	},
 
-	externals: ['prism'],
+	externals: ['prismjs'],
 
 	module: {
 		rules: [
