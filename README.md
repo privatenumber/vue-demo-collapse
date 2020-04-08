@@ -13,7 +13,11 @@
 		<src-file
 			name="Demo.vue"
 			language="html"
-		/>
+		>
+			<template v-pre>
+				<!-- source code -->
+			</template>
+		</src-file>
 	</demo-collapse>
 </script>
 
