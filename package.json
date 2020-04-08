@@ -1,7 +1,14 @@
 {
   "name": "vue-demo-collapse",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Vue component that shows a demo and a \"Show Code\" button to expand source code",
+  "keywords": [
+    "vue",
+    "component",
+    "prism",
+    "demo",
+    "collapse"
+  ],
   "main": "dist/ComponentDemo.js",
   "repository": {
     "type": "git",
