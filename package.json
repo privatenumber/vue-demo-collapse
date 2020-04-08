@@ -9,6 +9,7 @@
     "demo",
     "collapse"
   ],
+  "files": ["dist"],
   "main": "dist/ComponentDemo.js",
   "repository": {
     "type": "git",
