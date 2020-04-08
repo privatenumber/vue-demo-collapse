@@ -4,7 +4,13 @@
 
 <img src="/.github/screenshot.png">
 
+## Install
+```sh
+$ npm install vue-demo-collapse
+```
 
+## Usage
+Create a `<demo-collapse>` component, pass your demo in and the source code for that demo wrapped in the `<src-file>` component.
 ```vue
 <script>
 	<demo-collapse>
@@ -35,3 +41,6 @@ export default {
 </template>
 
 ```
+
+## License
+MIT
