@@ -13,7 +13,7 @@ module.exports = {
 	context: path.resolve('src'),
 
 	entry: {
-		DemoCollapse: './index.js',
+		'demo-collapse': './index.js',
 	},
 
 	output: {
