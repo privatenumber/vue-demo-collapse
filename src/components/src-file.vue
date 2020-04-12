@@ -8,19 +8,22 @@
 		>
 			{{ name }}
 		</div>
-
-		<pre :class="$s.Source"><code
-			ref="code"
-			:class="[$s.Code, prismClass]"
-		><slot /></code></pre>
+		<prism
+			:class="$s.Source"
+			:language="language"
+		><slot /></prism>
 	</div>
 </template>
 
 <script>
-import prismjs from 'prismjs';
+import Prism from 'vue-prism-component';
 
 export default {
 	name: 'SrcFile',
+
+	components: {
+		Prism,
+	},
 
 	props: {
 		name: {
@@ -31,21 +34,6 @@ export default {
 			type: String,
 			default: undefined,
 		},
-	},
-
-	computed: {
-		prismClass() {
-			if (this.language) {
-				return `language-${this.language}`;
-			}
-			return '';
-		},
-	},
-
-	mounted() {
-		if (this.language) {
-			prismjs.highlightElement(this.$refs.code);
-		}
 	},
 };
 </script>
@@ -80,11 +68,11 @@ export default {
 	color: #444;
 	white-space: pre-wrap;
 	max-width: 100%;
-}
 
-.Code {
-	border-left: 3px solid #52a5e0 !important;
-	padding: 1em 2em !important;
-	white-space: pre-wrap !important;
+	& > code {
+		border-left: 3px solid #52a5e0 !important;
+		padding: 1em 2em !important;
+		white-space: pre-wrap !important;
+	}
 }
 </style>
