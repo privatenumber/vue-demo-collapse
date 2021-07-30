@@ -6,7 +6,7 @@
 
 ## Install
 ```sh
-$ npm install vue-demo-collapse
+$ npm i vue-demo-collapse prismjs
 ```
 
 ## Usage
@@ -29,6 +29,9 @@ Create a `<demo-collapse>` component, pass your demo in and the source code for 
 
 <template>
 import { DemoCollapse, SrcFile } from 'vue-demo-collapse';
+import 'vue-demo-collapse/dist/style.css'; // Import styles from vue-demo-collapse
+import 'prismjs/themes/prism-coy.css'; // Import styles from prism-coy
+
 import Demo from './Demo.vue';
 
 export default {
